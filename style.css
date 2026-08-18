@@ -558,3 +558,156 @@ footer {
     }
 
   }
+/* =========================
+   GAME MODE PAGE
+========================= */
+
+.mode-hero {
+    min-height: 45vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            #164c2b,
+            #080b10 70%
+        );
+}
+
+.mode-hero-content {
+    max-width: 800px;
+}
+
+.mode-hero h1 {
+    font-size: clamp(45px, 7vw, 75px);
+
+    letter-spacing: -3px;
+
+    margin: 15px 0;
+}
+
+.mode-hero h1 span {
+    color: #5cff8d;
+}
+
+.mode-hero p:last-child {
+    color: #929eaa;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* EVENT */
+
+.event-card {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding: 28px;
+
+    background: #10151d;
+
+    border: 1px solid #293542;
+
+    border-radius: 14px;
+}
+
+.event-status {
+    display: inline-block;
+
+    color: #5cff8d;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 10px;
+}
+
+.event-card h3 {
+    font-size: 24px;
+
+    margin-bottom: 8px;
+}
+
+.event-card p {
+    color: #818d99;
+
+    line-height: 1.6;
+}
+
+
+/* WINNER */
+
+.winner-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 25px;
+
+    background: #10151d;
+
+    border: 1px solid #293542;
+
+    border-radius: 14px;
+}
+
+.winner-place {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #17231c;
+
+    border: 1px solid #5cff8d;
+
+    color: #5cff8d;
+
+    font-weight: 800;
+}
+
+.winner-card h3 {
+    margin-bottom: 5px;
+}
+
+.winner-card p {
+    color: #818d99;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .event-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    }
