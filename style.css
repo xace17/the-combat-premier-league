@@ -1,0 +1,560 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080b10;
+    color: #ffffff;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    height: 68px;
+    background: #0d1117;
+    border-bottom: 1px solid #252d38;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 5%;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #5cff8d;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #aeb7c2;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #5cff8d;
+}
+
+.discord {
+    background: #5865f2;
+    color: #ffffff !important;
+    padding: 9px 16px;
+    border-radius: 7px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 75vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #164c2b 0%,
+            #0c2418 25%,
+            #080b10 70%
+        );
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.small-title {
+    color: #5cff8d;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 8vw, 82px);
+    line-height: 0.98;
+    letter-spacing: -4px;
+    margin: 18px 0 25px;
+}
+
+.hero h1 span {
+    color: #5cff8d;
+}
+
+.hero-text {
+    max-width: 650px;
+    margin: auto;
+
+    color: #a1abb7;
+
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 13px 23px;
+    margin: 5px;
+
+    border-radius: 7px;
+
+    background: #5cff8d;
+    color: #061009;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(92, 255, 141, 0.18);
+}
+
+.btn.dark {
+    background: #151c25;
+    color: #ffffff;
+
+    border: 1px solid #303b48;
+}
+
+.btn.dark:hover {
+    border-color: #5cff8d;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    padding: 80px 0;
+}
+
+.container {
+    width: 88%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.section-title {
+    margin-bottom: 35px;
+}
+
+.section-label {
+    color: #5cff8d;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    color: #ffffff;
+
+    font-size: 36px;
+
+    margin: 8px 0;
+}
+
+.section-title > p:last-child {
+    color: #818c99;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   PVP MODE CARDS
+========================= */
+
+.modes {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 18px;
+}
+
+.mode-card {
+    min-height: 220px;
+
+    padding: 24px;
+
+    background: linear-gradient(
+        145deg,
+        #121922,
+        #0d131a
+    );
+
+    border: 1px solid #293542;
+
+    border-radius: 16px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: all 0.25s ease;
+}
+
+.mode-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    background: #5cff8d;
+
+    opacity: 0.035;
+
+    border-radius: 50%;
+
+    right: -45px;
+    bottom: -45px;
+}
+
+.mode-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #5cff8d;
+
+    background: linear-gradient(
+        145deg,
+        #16221c,
+        #101a15
+    );
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.35),
+        0 0 20px rgba(92, 255, 141, 0.06);
+}
+
+.mode-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.mode-number {
+    color: #596674;
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+.mode-arrow {
+    color: #5cff8d;
+
+    font-size: 26px;
+
+    transition: 0.2s ease;
+}
+
+.mode-card:hover .mode-arrow {
+    transform: translateX(5px);
+}
+
+.mode-card h3 {
+    color: #ffffff;
+
+    font-size: 27px;
+
+    margin-bottom: 7px;
+}
+
+.mode-card p {
+    color: #7f8b98;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   LEADERBOARD
+========================= */
+
+.leaderboard {
+    background: #0e141b;
+
+    border: 1px solid #29333f;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+.leader-row {
+    display: grid;
+
+    grid-template-columns:
+        70px
+        1fr
+        120px
+        100px;
+
+    padding: 18px 20px;
+
+    border-bottom: 1px solid #202a35;
+
+    align-items: center;
+}
+
+.leader-row:last-child {
+    border-bottom: none;
+}
+
+.leader-head {
+    background: #151d26;
+
+    color: #5cff8d;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.rank {
+    color: #7d8996;
+
+    font-weight: 700;
+}
+
+.player {
+    color: #ffffff;
+
+    font-weight: 700;
+}
+
+.points {
+    color: #5cff8d;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   DISCORD
+========================= */
+
+.discord-box {
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 55px 25px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #131a24,
+            #0d131a
+        );
+
+    border: 1px solid #293542;
+
+    border-radius: 16px;
+}
+
+.discord-box h2 {
+    color: #ffffff;
+
+    font-size: 36px;
+
+    margin: 10px 0;
+}
+
+.discord-box > p:not(.section-label) {
+    color: #8995a2;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #070a0e;
+
+    border-top: 1px solid #202933;
+
+    text-align: center;
+
+    padding: 30px;
+
+    color: #626e7b;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    .modes {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    nav {
+        height: auto;
+
+        padding: 14px 4%;
+
+        flex-direction: column;
+
+        gap: 14px;
+    }
+
+    .nav-links {
+        gap: 12px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 65vh;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+
+        letter-spacing: -2px;
+    }
+
+    .hero-text {
+        font-size: 15px;
+    }
+
+    .modes {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .mode-card {
+        min-height: 180px;
+
+        padding: 19px;
+    }
+
+    .mode-card h3 {
+        font-size: 23px;
+    }
+
+    .leader-row {
+        grid-template-columns:
+            45px
+            1fr
+            80px;
+
+        padding: 15px 12px;
+    }
+
+    .leader-row .wins {
+        display: none;
+    }
+
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 420px) {
+
+    .modes {
+        grid-template-columns: 1fr;
+    }
+
+    .mode-card {
+        min-height: 155px;
+    }
+
+  }
