@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minecraft PvP Events</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0b0f14;
+    color: #ffffff;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #111820;
+    border-bottom: 1px solid #26313d;
+    padding: 15px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #43d17b;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #43d17b;
+}
+
+.hero {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    background: radial-gradient(circle at center, #17252d, #0b0f14 65%);
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: #43d17b;
+}
+
+.hero p {
+    color: #b8c0c8;
+    max-width: 650px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    margin: 5px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    background: #43d17b;
+    color: #07100b;
+}
+
+.btn.secondary {
+    background: #1b252f;
+    color: white;
+    border: 1px solid #34404c;
+}
+
+section {
+    padding: 70px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #9da7b1;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #111820;
+    border: 1px solid #26313d;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #aab3bc;
+    line-height: 1.5;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #111820;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #26313d;
+}
+
+th {
+    background: #18212a;
+    color: #43d17b;
+}
+
+td {
+    color: #d6dce1;
+}
+
+.rank {
+    font-weight: bold;
+}
+
+.event-status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: #173d27;
+    color: #43d17b;
+    font-size: 13px;
+}
+
+.rules {
+    max-width: 800px;
+    margin: auto;
+}
+
+.rules li {
+    margin: 13px 0;
+    color: #c5ccd3;
+}
+
+.discord {
+    text-align: center;
+    background: #111820;
+    border: 1px solid #26313d;
+    border-radius: 12px;
+    max-width: 850px;
+    margin: auto;
+    padding: 45px 25px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #26313d;
+    color: #7f8993;
+}
+
+@media (max-width: 700px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    section {
+        padding: 55px 5%;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 11px 8px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">MC<span>EVENTS</span></div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#leaderboard">Leaderboard</a></li>
+        <li><a href="#winners">Winners</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#rules">Rules</a></li>
+        <li><a href="#join">Join</a></li>
+    </ul>
+</nav>
+
+
+<!-- HOME -->
+<section class="hero" id="home">
+
+    <h1>Minecraft <span>PvP Events</span></h1>
+
+    <p>
+        Compete against other Minecraft players, climb the leaderboard,
+        become a champion, and build your PvP reputation.
+    </p>
+
+    <div class="buttons">
+        <a href="#events" class="btn">View Events</a>
+        <a href="#join" class="btn secondary">Join Discord</a>
+    </div>
+
+</section>
+
+
+<!-- LEADERBOARD -->
+<section id="leaderboard">
+
+    <div class="section-title">
+        <h2>Leaderboard</h2>
+        <p>Top players in the community</p>
+    </div>
+
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Points</th>
+            <th>Wins</th>
+        </tr>
+
+        <tr>
+            <td class="rank">1</td>
+            <td>PlayerOne</td>
+            <td>1250</td>
+            <td>12</td>
+        </tr>
+
+        <tr>
+            <td class="rank">2</td>
+            <td>PlayerTwo</td>
+            <td>1100</td>
+            <td>10</td>
+        </tr>
+
+        <tr>
+            <td class="rank">3</td>
+            <td>PlayerThree</td>
+            <td>950</td>
+            <td>8</td>
+        </tr>
+
+    </table>
+
+</section>
+
+
+<!-- WINNERS -->
+<section id="winners">
+
+    <div class="section-title">
+        <h2>Winners</h2>
+        <p>Previous tournament champions</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>PlayerOne</h3>
+            <p>1st Place — PvP Tournament #1</p>
+        </div>
+
+        <div class="card">
+            <h3>PlayerTwo</h3>
+            <p>1st Place — BedWars Tournament</p>
+        </div>
+
+        <div class="card">
+            <h3>PlayerThree</h3>
+            <p>1st Place — Boxing Tournament</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EVENTS -->
+<section id="events">
+
+    <div class="section-title">
+        <h2>Events</h2>
+        <p>Compete in different Minecraft gamemodes</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Classic PvP</h3>
+            <p>Fight your opponents and prove your PvP skills.</p>
+            <br>
+            <span class="event-status">Registration Open</span>
+        </div>
+
+        <div class="card">
+            <h3>BedWars</h3>
+            <p>Destroy beds, eliminate opponents, and survive.</p>
+            <br>
+            <span class="event-status">Coming Soon</span>
+        </div>
+
+        <div class="card">
+            <h3>Boxing</h3>
+            <p>Pure PvP skill. No distractions.</p>
+            <br>
+            <span class="event-status">Coming Soon</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- RULES -->
+<section id="rules">
+
+    <div class="section-title">
+        <h2>Rules</h2>
+        <p>Keep the competition fair</p>
+    </div>
+
+    <div class="rules">
+
+        <ol>
+            <li>No hacks, cheats, or unfair advantages.</li>
+            <li>No bug or glitch exploiting.</li>
+            <li>No teaming unless the event allows it.</li>
+            <li>No combat logging.</li>
+            <li>No toxicity, harassment, or slurs.</li>
+            <li>Only allowed mods and clients.</li>
+            <li>Staff decisions are final.</li>
+            <li>Play fair and respect other players.</li>
+        </ol>
+
+    </div>
+
+</section>
+
+
+<!-- JOIN -->
+<section id="join">
+
+    <div class="discord">
+
+        <h2>Join the Community</h2>
+
+        <p style="margin: 15px 0 25px; color: #aab3bc;">
+            Join our Discord to register for events, get announcements,
+            check results, and meet other players.
+        </p>
+
+        <a href="YOUR_DISCORD_INVITE_HERE" class="btn">
+            Join Discord
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+    Minecraft PvP Events © 2026
+</footer>
+
+</body>
+  </html>
